@@ -5,32 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <script src="../js/lib/jquery.js"></script>
-    <script>
-      function myIP() {
-	if (window.XMLHttpRequest) {
-	  xmlhttp = new XMLHttpRequest();
-	} else {
-	  xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-	}
-	xmlhttp.open('GET', 'http://api.hostip.info/get_html.php', false);
-	xmlhttp.send();
-	hostipInfo = xmlhttp.responseText.split('\n');
-	for (i = 0; hostipInfo.length >= i; i++) {
-	  ipAddress = hostipInfo[i].split(':');
-	  if (ipAddress[0] === 'IP') {
-	    return ipAddress[1];
-	  }
-	}
-	return false;
-      }
-      $.getJSON("http://jsonip.com",
-	function(data) {
-//	  if (data.ip == '177.9.243.53') {
-//	  } else {
-//	    window.location.href = 'www.google.com';
-//	  }
-	});
-    </script>
   </head>
   <body>
     <div ng-controller="ComicListCtrl">
