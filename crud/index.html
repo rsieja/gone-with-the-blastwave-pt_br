@@ -4,9 +4,6 @@
     <title>GWTB - Autenticação</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <script src="../js/lib/jquery.js"></script>
-    <script src="../js/lib/crypto-js/components/enc-base64-min.js"></script>
-    <script src="../js/lib/crypto-js/components/enc-utf16-min.js"></script>
     <style>
       body {
 	background: #7c7a6b;
@@ -102,13 +99,6 @@
 	      default:
 		clearChildren(e);
 	    }
-	}
-      }
-      function auth(user, pass) {
-	if (user === 'sieja2097' && pass === 'root@root') {
-	  window.location.href = './admin.html';
-	} else {
-	  alert('Credenciais inválidas!');
 	}
       }
     </script>
