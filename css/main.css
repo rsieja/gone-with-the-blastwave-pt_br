@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    width: 100%;
+    text-align: center; /* hack IE */
+    background: #17140f;
+}
+input {
+    background: #ccbe87;
+    border: 1px solid #464236;
+    padding: 3px;
+}
+#main {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left; /* remédio para hack IE */
+    /*background: blue;*/
+}
+header {
+    position: relative;
+    width: 100%;
+    margin: 8px auto;
+    /*background: yellow;*/
+}
+    header img {
+	position: relative;
+	width: 847px;
+	height: 100px;
+	left: 50%;
+	margin-left: -423.5px;
+	box-shadow: 0 5px 8px 0 #000;
+	z-index: 2;
+    }
+nav {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+}
+    nav a {
+	padding: 15px 20px 5px 20px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	text-decoration: none;
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 35px;
+	box-shadow: 0 5px 8px 0 #000;
+	background: #676043;
+	color: #d3b96f;
+    }
+    .empty-nav-tab {
+	position: relative;
+	padding: 10px 0 0 128px;
+	bottom: 12px;
+    }
+#content {
+    position: relative;
+    float: left;
+    width: 89%;
+}
+    #content_main {
+	position: relative;
+	float: left;
+	width: 58.5%;
+	margin: -48px 120px;
+	padding: 55px;
+	padding-bottom: 10px;
+	background: #464236;
+    }
+	#content_main table {
+	    position: relative;
+	    right: 45px;
+	    width: 100%;
+	}
+	.td_title {
+	    padding-bottom: 10px;
+	    text-align: center;
+	    font-family: arial;
+	    font-size: 12pt;
+	    color: #d0ba6c;
+	}
+	.td_image {
+	    padding-bottom: 10px;
+	}
+	.td_controls {
+	    text-align: center;
+	    padding-bottom: 10px;
+	}
+	.td_select { text-align: center; }
+    #content_right {
+	position: relative;
+	float: left;
+	width: 15%;
+	margin-top: -48px;
+	top: 0;
+	right: 0;
+	padding-top: 60px;
+	padding-left: 5px;
+	padding-bottom: 15px;
+	font-size: 10pt;
+	background: #464236;
+    }
+	#content_right span {
+	    font-family: arial;
+	    color: #d0ba6c;
+	}
+	#content_right li {
+	    list-style: none;
+	}
+	#content_right a {
+	    padding-left: 20px;
+	    font-family: arial;
+	    font-size: 8px;
+	    color: #ccbe87;
+	}
+footer {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+    .footer_text {
+	text-align: center;
+	font-size: 10pt;
+	color: #7c7a6b;
+    }
+    
+select {
+    position: fixed;
+    left: 3%;
+    top: 2%;
+    background: #464236;
+    color: #d0ba6c;
+}
+option:hover {
+    background: #d0ba6c;
+    color: #464236;
+}

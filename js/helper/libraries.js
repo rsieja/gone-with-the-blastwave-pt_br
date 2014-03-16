@@ -1,0 +1,1 @@
+document.write('<script src="./js/lib/angular.js"></script>');

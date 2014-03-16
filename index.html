@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="goneWithTheBlastwave">
+  <head>
+    <title>Porque a guerra também pode ser chata.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="./img/favicon/favicon.ico">
+    <script type="text/javascript" src="./js/helper/stylesheets.js"></script>
+    <script type="text/javascript" src="./js/helper/libraries.js"></script>
+    <script type="text/javascript" src="./js/controllers.js"></script>
+    <script type="text/javascript" src="./js/services.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <script type="text/javascript" src="./js/partials/header.js"></script>
+      <div id="content">
+	<div id="content_main" ng-controller="ComicListController">
+	  <table ng-repeat="c in comics" >
+	    <tr ng-if="$parent.$parent.selectedElement === c.number">
+	      <td class="td_title">
+		{{ c.title }}
+	      </td>
+	    </tr>
+	    <tr ng-if="$parent.$parent.selectedElement === c.number">
+	      <td class="td_image">
+		<img src="{{ c.image }}" alt="{{ c.title }}" title="{{ c.title }}">
+	      </td>
+	    </tr>
+<!--	    <tr>
+	      <td class="td_controls" ng-if="$parent.$parent.selectedElement === 1 && checkSelected(1)">
+		<img src="./img/controls/un_first.jpg" alt="Primeira" title="Primeira">
+		<img src="./img/controls/un_previous.jpg" alt="Anterior" title="Anterior">
+		<img src="./img/controls/next.jpg" alt="Próxima" title="Próxima">
+		<img src="./img/controls/latest.jpg" alt="Última" title="Última">
+              </td>
+	      <td class="td_controls" ng-if="$parent.$parent.selectedElement === 2 && checkSelected(2)">
+		<img src="./img/controls/first.jpg" alt="Primeira" title="Primeira">
+		<img src="./img/controls/previous.jpg" alt="Anterior" title="Anterior">
+		<img src="./img/controls/un_next.jpg" alt="Próxima" title="Próxima">
+		<img src="./img/controls/un_latest.jpg" alt="Última" title="Última">
+	      </td>
+	    </tr>-->
+	  </table>
+	  <select ng-change="selectComic($parent.selectedElement)"
+		  ng-model="$parent.selectedElement"
+		  ng-options="comic.number as comic.label for comic in comics">
+	    <option value="">Selecione uma tira</option>
+	  </select>
+	</div>
+	<div id="content_right">
+	  <span>Tradu&ccedil;&otilde;es n&atilde;o oficiais:</span>
+	  <ul>
+	    <li><a href="http://gwtb.chanibal.pl/">Polon&eacute;s</a></li>
+	    <li><a href="http://wasteland-bg.com/pics/blastwave-comic-bg/?kat=Comic">B&uacute;lgaro</a></li>
+	    <li><a href="http://www.fallout-archives.com/foto/3/48p1.php">Russo</a></li>
+	    <li><a href="http://www.rodrigosiejabertin.com.br/gwtb">Portugu&eacute;s</a></li>
+	    <li><a href="http://blastwavefrance.free.fr/">Franc&eacute;s</a></li>
+	  </ul>
+	</div>
+	<script type="text/javascript" src="./js/partials/footer.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

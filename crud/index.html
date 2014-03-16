@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GWTB - Autenticação</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/crypto-js/components/enc-base64-min.js"></script>
+    <script src="../js/lib/crypto-js/components/enc-utf16-min.js"></script>
+    <style>
+      body {
+	background: #7c7a6b;
+      }
+      .btn:hover {
+	box-shadow: 0.3px 0.3px 5px #d0ba6c;
+	cursor: pointer;
+      }
+      #login {
+	position: absolute;
+	width: 400px;
+	height: 220px;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -110px;
+	background: #fff;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border: 1px solid #ddd;
+	font-family: Tahoma, Arial, sans-serif;
+	color: #333;
+	text-shadow: 1px 1px 3px #555;
+      }
+      #login h1 {
+	text-align: center;
+      }
+      #divUsuario,
+      #divSenha {
+	width: 100%;
+	text-align: center;
+      }
+      #divUsuario {
+	margin-bottom: 10px;
+      }
+      #divSenha {
+	margin-left: 4px;
+      }
+      #divButtons {
+	margin-top: 30px;
+	text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login">
+      <h1>Autenticação</h1>
+      <div id="divUsuario">
+	<label for="txtUsuario">Usuário</label>
+	<input id="txtUsuario" name="txtUsuario" type="text"
+	       onclick="this.select();">
+      </div>
+      <div id="divSenha">
+	<label for="txtSenha">Senha</label>
+	<input id="txtSenha" name="txtSenha" type="text"
+	       onclick="this.select();">
+      </div>
+      <div id="divButtons">
+	<input class="btn" id="btnLogin" name="btnLogin" type="button" value="Login"
+	       onclick="auth(document.getElementById('txtUsuario').value, document.getElementById('txtSenha').value);">
+	<input class="btn" id="btnClear" name="btnClear" type="button" value="Limpar"
+	       onclick="clearChildren(document.getElementById('login'));">
+      </div>
+    </div>
+    <script>
+      function clearChildren(element) {
+	for (var i = 0; i < element.childNodes.length; i++) {
+	  var e = element.childNodes[i];
+	  if (e.tagName)
+	    switch (e.tagName.toLowerCase()) {
+	      case 'input':
+		switch (e.type) {
+		  case "radio":
+		  case "checkbox":
+		    e.checked = false;
+		    break;
+		  case "button":
+		  case "submit":
+		  case "image":
+		    break;
+		  default:
+		    e.value = '';
+		    break;
+		}
+		break;
+	      case 'select':
+		e.selectedIndex = 0;
+		break;
+	      case 'textarea':
+		e.innerHTML = '';
+		break;
+	      default:
+		clearChildren(e);
+	    }
+	}
+      }
+      function auth(user, pass) {
+	if (user === 'sieja2097' && pass === 'root@root') {
+	  window.location.href = './admin.html';
+	} else {
+	  alert('Credenciais inválidas!');
+	}
+      }
+    </script>
+  </body>
+</html>

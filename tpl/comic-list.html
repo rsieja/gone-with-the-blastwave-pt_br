@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="goneWithTheBlastwave">
+  <head>
+    <title>Lista de tiras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico">
+    <script type="text/javascript" src="../js/helper/stylesheets.js"></script>
+    <script type="text/javascript" src="../js/helper/libraries.js"></script>
+    <script type="text/javascript" src="../js/controllers.js"></script>
+    <script type="text/javascript" src="../js/services.js"></script>
+  </head>
+  <body>
+    <ul ng-controller="ComicListCtrl">
+      <li ng-repeat="comic in comics">
+	<a href='#/comics/{{ wine.id }}'>{{ wine.name }}</a>
+      </li>
+    </ul>
+  </body>
+</html>
